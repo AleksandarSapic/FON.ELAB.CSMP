@@ -1,0 +1,89 @@
+/*GENERAL*/
+#root {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* APP HEADER START */
+.app-header {
+    height: 70px;
+}
+
+.app-header-aside {
+    width: 25%;
+}
+
+.app-header-center-side {
+    width: 50%;
+}
+
+.app-header-center-side-item {
+    margin: .5rem 0;
+}
+
+.app-header-aside-item {
+    margin: .5rem 0;
+}
+
+/* APP HEADER END */
+
+/* MAIN AREA START */
+.main-area {
+    flex: 1;
+}
+
+.app-side-left {
+    width: 25%;
+    max-width: 100%;
+}
+
+.blocks-panel {
+    overflow-y: scroll;
+}
+
+.category-items-section {
+    display: none;
+}
+
+.block {
+    text-align: center;
+    box-sizing: border-box;
+    padding: 1rem;
+}
+
+.active-category-section {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.drag-area {
+    width: 50%;
+    position: relative;
+    overflow: hidden;
+}
+
+.drag-container {
+    width: 1000px;
+    height: 1000px;
+    background-image: linear-gradient(45deg, #ccc 25%, transparent 25%, transparent 75%, #ccc 75%, #ccc), linear-gradient(45deg, #ccc 25%, transparent 25%, transparent 75%, #ccc 75%, #ccc);
+    background-size: 20px 20px;
+    background-position: 0 0, 10px 10px;
+    background-color: #f0f0f0;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.app-side-right {
+    width: 25%;
+    background-color: blanchedalmond;
+}
+
+.dragged-blocks-list,
+.input-parameters,
+.output-parameters {
+    height: 33%;
+}
+
+/* MAIN AREA END */
