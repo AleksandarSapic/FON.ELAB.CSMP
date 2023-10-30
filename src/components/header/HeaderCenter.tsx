@@ -13,12 +13,10 @@ const mergedItems = centerNavItems.map((centerNavItem) => {
   const matchingSvgItem = SvgArray.find(
     (svgItem) => svgItem.itemID === centerNavItem.itemID
   );
-
-  if (matchingSvgItem) {
-    return { ...centerNavItem, contentSVG: matchingSvgItem.content };
-  }
-
-  return centerNavItem;
+  return {
+    ...centerNavItem,
+    contentSVG: matchingSvgItem ? matchingSvgItem.content : undefined,
+  };
 });
 function HeaderCenter() {
   return (
@@ -29,7 +27,15 @@ function HeaderCenter() {
             key={item.itemID}
             className="d-flex flex-column align-items-center p-2 center-header-item-wrapper"
           >
-            <img src={item.contentSVG} alt={item.itemID.toString()} />
+            <img
+              src={item.contentSVG}
+              alt={item.content.toString()}
+              style={
+                item.content.toString() === "Kreiraj junction"
+                  ? { transform: "rotate(270deg)" }
+                  : {}
+              }
+            />
             <p key={item.itemID} className="app-header-center-side-item">
               {item.content}
             </p>
