@@ -1,9 +1,9 @@
 function DraggedBlockInfo() {
   return (
     <>
-      <div className="block-info-section">
+      <div className="d-flex flex-column block-info-section">
         <p className="text-center">Block name</p>
-        <div className="input-section">
+        <div className="d-flex flex-column input-section">
           <p className="text-center">Ulazi/Parametri</p>
           <div className="input-parameters">
             <div className="d-flex one-output-wrapper">
@@ -12,7 +12,7 @@ function DraggedBlockInfo() {
             </div>
           </div>
         </div>
-        <div className="output-section">
+        <div className="d-flex flex-column output-section">
           <p className="text-center">Izlazi</p>
           <div className="output-parameters">
             <div className="d-flex one-output-wrapper">

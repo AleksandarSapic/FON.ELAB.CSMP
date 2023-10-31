@@ -1,7 +1,7 @@
 function DraggedBlocksList() {
   return (
     <>
-      <div className="dragged-blocks-list">
+      <div className="d-flex flex-column dragged-blocks-list">
         <p className="text-center">Blokovi</p>
       </div>
     </>
