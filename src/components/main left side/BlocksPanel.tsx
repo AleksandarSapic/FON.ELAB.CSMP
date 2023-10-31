@@ -1,5 +1,5 @@
 import Block from "./Block";
-import BlockItems from "./BlockItems";
+import BlockItems from "../../data/BlockItems";
 function BlocksPanel() {
   return (
     <>

@@ -1,4 +1,4 @@
-import SvgArray from "./SvgArray";
+import SvgArray from "../../data/SvgArray";
 const centerNavItems = [
   { itemID: 1, content: "Obriši" },
   { itemID: 2, content: "Rotiraj" },

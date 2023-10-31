@@ -1,36 +1,24 @@
-import { useState } from "react";
-import BlocksPanel from "./BlocksPanel";
-import BlocksCategoriesPanel from "./BlocksCategoriesPanel";
-const blockViewOptions = [
-  { id: 1, label: "sve" },
-  { id: 2, label: "po grupama" },
-];
-function SelectCategory() {
-  const [value, setValue] = useState(blockViewOptions[0].label);
-  function handleSelect(event: React.ChangeEvent<HTMLSelectElement>) {
-    setValue(event.target.value);
-  }
+import BlockViewOptions from "../../data/BlockViewOptions";
+interface SelectCategoryProps {
+  value: string;
+  handleSelect: (event: React.ChangeEvent<HTMLSelectElement>) => void;
+}
+
+function SelectCategoryPart({ value, handleSelect }: SelectCategoryProps) {
   return (
-    <>
-      <div className="d-flex justify-content-around block-categories-section">
-        <p>Prikaži</p>
-        <div className="w-50 select-view-wrapper">
-          <select onChange={handleSelect}>
-            {blockViewOptions.map((option) => (
-              <option key={option.id} value={option.label.toUpperCase()}>
-                {option.label.toUpperCase()}
-              </option>
-            ))}
-          </select>
-        </div>
+    <div className="d-flex justify-content-around block-categories-section">
+      <p>Prikaži</p>
+      <div className="w-50 select-view-wrapper">
+        <select onChange={handleSelect} value={value}>
+          {BlockViewOptions.map((option) => (
+            <option key={option.id} value={option.label.toUpperCase()}>
+              {option.label.toUpperCase()}
+            </option>
+          ))}
+        </select>
       </div>
-      {value.toLowerCase() === blockViewOptions[0].label ? (
-        <BlocksPanel />
-      ) : (
-        <BlocksCategoriesPanel />
-      )}
-    </>
+    </div>
   );
 }
 
-export default SelectCategory;
+export default SelectCategoryPart;
