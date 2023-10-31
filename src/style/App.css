@@ -60,7 +60,7 @@
 .drag-area {
     width: 50%;
     position: relative;
-    overflow: hidden;
+    overflow: scroll;
 }
 
 .drag-container {
