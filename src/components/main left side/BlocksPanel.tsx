@@ -1,11 +1,14 @@
-import Block from "./Block";
+import DraggableBlock from "./DraggableBlock";
 import BlockItems from "../../data/BlockItems";
+import { DndContext } from "@dnd-kit/core";
 function BlocksPanel() {
   return (
     <>
       <div className="d-flex flex-wrap blocks-panel">
         {BlockItems.map((block) => (
-          <Block key={block.id} name={block.name} />
+          <DndContext key={block.id}>
+            <DraggableBlock key={block.id} name={block.name} />
+          </DndContext>
         ))}
       </div>
     </>
