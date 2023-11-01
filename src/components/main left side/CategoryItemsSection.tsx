@@ -1,4 +1,5 @@
-import Block from "./Block";
+import DraggableBlock from "./DraggableBlock";
+import { DndContext } from "@dnd-kit/core";
 
 interface BlockItem {
   id: number;
@@ -26,7 +27,9 @@ function CategoryItemsSection({
       {blockItems
         .filter((block) => block.category === category)
         .map((item) => (
-          <Block key={item.id} name={item.name} />
+          <DndContext key={item.id}>
+            <DraggableBlock key={item.id} name={item.name} />
+          </DndContext>
         ))}
     </div>
   );
