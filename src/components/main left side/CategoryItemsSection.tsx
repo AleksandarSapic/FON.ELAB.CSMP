@@ -1,12 +1,10 @@
-import DraggableBlock from "./DraggableBlock";
-import { DndContext } from "@dnd-kit/core";
+import Block from "./Block";
 
 interface BlockItem {
   id: number;
   category: string;
   name: string;
 }
-
 interface CategoryItemsSectionProps {
   category: string;
   activeSection: string;
@@ -27,9 +25,7 @@ function CategoryItemsSection({
       {blockItems
         .filter((block) => block.category === category)
         .map((item) => (
-          <DndContext key={item.id}>
-            <DraggableBlock key={item.id} name={item.name} />
-          </DndContext>
+          <Block key={item.id} name={item.name} />
         ))}
     </div>
   );
