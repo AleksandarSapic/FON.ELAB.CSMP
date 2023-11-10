@@ -1,7 +1,6 @@
 import LeftAside from "./main left side/LeftAside";
 import DragArea from "./drag area/DragArea";
 import RightAside from "./main right side/RightAside";
-import { DndContext } from "@dnd-kit/core";
 
 function MainArea() {
   return (
