@@ -1,6 +1,7 @@
 import DraggableBlock from "./DraggableBlock";
 import BlockItems from "../../data/BlockItems";
 import { DndContext } from "@dnd-kit/core";
+
 function BlocksPanel() {
   return (
     <>
