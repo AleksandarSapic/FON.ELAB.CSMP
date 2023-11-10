@@ -7,9 +7,7 @@ function MainArea() {
   return (
     <>
       <div className="d-flex main-area">
-        <DndContext>
-          <LeftAside /> <DragArea />
-        </DndContext>
+        <LeftAside /> <DragArea />
         <RightAside />
       </div>
     </>

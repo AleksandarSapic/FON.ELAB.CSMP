@@ -3,11 +3,9 @@ import { DndContext } from "@dnd-kit/core";
 
 function DragArea() {
   return (
-    <DndContext>
-      <div className="drag-area">
-        <DragContainer />
-      </div>
-    </DndContext>
+    <div className="drag-area">
+      <DragContainer />
+    </div>
   );
 }
 export default DragArea;
