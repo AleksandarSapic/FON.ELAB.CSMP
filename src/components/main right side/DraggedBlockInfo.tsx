@@ -2,7 +2,7 @@ function DraggedBlockInfo() {
   return (
     <>
       <div className="d-flex flex-column block-info-section">
-        <p className="text-center">Block name</p>
+        <p className="text-center">Naziv elementa</p>
         <div className="d-flex flex-column input-section">
           <p className="text-center">Ulazi/Parametri</p>
           <div className="input-parameters">
