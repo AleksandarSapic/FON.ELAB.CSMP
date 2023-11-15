@@ -7,8 +7,8 @@ function DraggedBlockInfo() {
           <p className="text-center">Ulazi/Parametri</p>
           <div className="input-parameters">
             <div className="d-flex one-output-wrapper">
-              <p className="text-center w-50">Ulazni parametar:</p>
-              <input className="w-50 " type="text" />
+              <span className="text-center w-50">Ulaz</span>
+              <span className="text-center w-50">1. ArcTan</span>
             </div>
           </div>
         </div>
@@ -16,8 +16,8 @@ function DraggedBlockInfo() {
           <p className="text-center">Izlazi</p>
           <div className="output-parameters">
             <div className="d-flex one-output-wrapper">
-              <p className="text-center w-50">Izlazni parametar:</p>
-              <input className="w-50" type="text" />
+              <span className="text-center w-50">Izlaz</span>
+              <span className="text-center w-50">1. ArcTan</span>
             </div>
           </div>
         </div>
