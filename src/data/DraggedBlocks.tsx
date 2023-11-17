@@ -1,33 +1,4 @@
-type Inputs = {
-  input1?: string | null;
-  input3?: string | null;
-  input2?: string | null;
-};
-
-type Parameters = {
-  parameter1?: number | null;
-  parameter2?: number | null;
-  parameter3?: number | null;
-};
-
-type DraggedBlock = {
-  id: number;
-  name: string;
-  input: Inputs;
-  parameter: Parameters;
-  output: string;
-};
-
-interface DraggedBlocks {
-  objects: DraggedBlock[];
-  addBlock: (
-    name: string,
-    input: Inputs,
-    parameter: Parameters,
-    output: string
-  ) => void;
-  removeBlock: (id: number) => void;
-}
+import DraggedBlock from "../interfaces/DraggedBlock";
 
 const DraggedBlocks: DraggedBlock[] = [
   {
