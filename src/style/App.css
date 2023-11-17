@@ -90,6 +90,20 @@
     height: 33%;
 }
 
+.dragged-blocks-list {
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.dragged-blocks-list-title {
+    position: sticky;
+    top: 0;
+}
+
+.one-dragged-block-section {
+    text-wrap: nowrap;
+}
+
 /* MAIN AREA END */
 
 /* SET PARAMETERS BOX START*/
