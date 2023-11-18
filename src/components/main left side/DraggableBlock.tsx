@@ -1,6 +1,6 @@
 import { useDraggable } from "@dnd-kit/core";
 import Block from "./Block";
-import BlockProps from "../../interfaces/BlockProps";
+import BlockProps from "../../interfaces/IBlockProps";
 
 function DraggableBlock({ name }: BlockProps) {
   const { attributes, listeners, setNodeRef, transform } = useDraggable({

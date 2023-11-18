@@ -1,6 +1,6 @@
-import DraggedBlock from "../interfaces/DraggedBlock";
+import IDraggedBlock from "../interfaces/IDraggedBlock";
 
-const DraggedBlocks: DraggedBlock[] = [
+const DraggedBlocks: IDraggedBlock[] = [
   {
     id: 1,
     name: "Sin",

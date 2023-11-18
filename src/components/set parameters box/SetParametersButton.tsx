@@ -1,10 +1,10 @@
-import SetParametersButtonProps from "../../interfaces/SetParametersButtonProps";
+import ISetParametersButtonProps from "../../interfaces/ISetParametersButtonProps";
 
 function SetParametersButton({
   buttonText,
   imgAlt,
   imgSrc,
-}: SetParametersButtonProps) {
+}: ISetParametersButtonProps) {
   return (
     <>
       <div className="d-flex">

@@ -1,9 +1,9 @@
-import SetParameterSectionProps from "../../interfaces/SetParameterSectionProps";
+import ISetParameterSectionProps from "../../interfaces/ISetParameterSectionProps";
 
 function OneInputParameter({
   spanText,
   inputTagContent,
-}: SetParameterSectionProps) {
+}: ISetParameterSectionProps) {
   return (
     <div className="d-flex justify-content-around">
       <span>{spanText}</span>

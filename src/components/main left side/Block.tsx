@@ -1,6 +1,6 @@
-import BlockProps from "../../interfaces/BlockProps";
+import IBlockProps from "../../interfaces/IBlockProps";
 
-function Block({ name }: BlockProps) {
+function Block({ name }: IBlockProps) {
   return <div className="col-4 block">{name}</div>;
 }
 
