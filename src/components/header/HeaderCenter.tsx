@@ -21,7 +21,7 @@ const mergedItems = centerNavItems.map((centerNavItem) => {
 function HeaderCenter() {
   return (
     <>
-      <div className="d-flex justify-content-center app-header-center-side">
+      <div className="d-flex justify-content-center w-50 app-header-center-side">
         {mergedItems.map((item) => (
           <div
             key={item.itemID}

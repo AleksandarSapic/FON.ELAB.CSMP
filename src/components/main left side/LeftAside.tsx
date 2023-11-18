@@ -9,7 +9,7 @@ function LeftAside() {
   }
   return (
     <>
-      <div className="d-flex flex-column app-side-left">
+      <div className="d-flex flex-column w-25 app-side-left">
         <SelectCategory value={value} handleSelect={handleSelect} />
         <SelectCategoryRenderer value={value} />
       </div>

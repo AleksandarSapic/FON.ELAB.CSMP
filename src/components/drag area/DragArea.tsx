@@ -2,7 +2,7 @@ import DragContainer from "./DragContainer";
 
 function DragArea() {
   return (
-    <div className="drag-area">
+    <div className="w-50 drag-area">
       <DragContainer />
     </div>
   );
