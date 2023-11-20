@@ -1,12 +1,12 @@
 import BlockItems from "../../data/BlockItems";
-import Block from "./Block";
+import DraggableBlock from "./DraggableBlock";
 
 function BlocksPanel() {
   return (
     <>
       <div className="d-flex flex-wrap blocks-panel">
         {BlockItems.map((block) => (
-          <Block key={block.id} name={block.name} />
+          <DraggableBlock key={block.id} name={block.name} />
         ))}
       </div>
     </>

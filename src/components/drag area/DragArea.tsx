@@ -1,9 +1,10 @@
 import DragContainer from "./DragContainer";
+import IDragAreaFunctionProp from "../../interfaces/IDragAreaFunctionProp";
 
-function DragArea() {
+function DragArea({ increment }: IDragAreaFunctionProp) {
   return (
     <div className="w-50 drag-area">
-      <DragContainer />
+      <DragContainer increment={increment} />
     </div>
   );
 }

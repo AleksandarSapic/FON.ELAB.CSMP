@@ -1,4 +1,4 @@
-import Block from "./Block";
+import DraggableBlock from "./DraggableBlock";
 
 interface BlockItem {
   id: number;
@@ -25,7 +25,7 @@ function CategoryItemsSection({
       {blockItems
         .filter((block) => block.category === category)
         .map((item) => (
-          <Block key={item.id} name={item.name} />
+          <DraggableBlock key={item.id} name={item.name} />
         ))}
     </div>
   );
