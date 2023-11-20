@@ -1,4 +1,5 @@
 import BlockViewOptions from "../../data/BlockViewOptions";
+
 interface SelectCategoryProps {
   value: string;
   handleSelect: (event: React.ChangeEvent<HTMLSelectElement>) => void;

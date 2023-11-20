@@ -9,12 +9,14 @@ interface CategoryItemsSectionProps {
   category: string;
   activeSection: string;
   blockItems: BlockItem[];
+  setDraggingBlock: (draggingBlockName: string) => void;
 }
 
 function CategoryItemsSection({
   category,
   activeSection,
   blockItems,
+  setDraggingBlock,
 }: CategoryItemsSectionProps) {
   return (
     <div
@@ -25,7 +27,11 @@ function CategoryItemsSection({
       {blockItems
         .filter((block) => block.category === category)
         .map((item) => (
-          <DraggableBlock key={item.id} name={item.name} />
+          <DraggableBlock
+            key={item.id}
+            name={item.name}
+            setDraggingBlock={setDraggingBlock}
+          />
         ))}
     </div>
   );

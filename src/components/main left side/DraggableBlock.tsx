@@ -1,9 +1,17 @@
 import Block from "./Block";
-import BlockProps from "../../interfaces/IBlockProps";
 
-function DraggableBlock({ name }: BlockProps) {
+interface DraggableBlockProps {
+  name: string;
+  setDraggingBlock: (draggingBlockName: string) => void;
+}
+
+function DraggableBlock({ name, setDraggingBlock }: DraggableBlockProps) {
   return (
-    <div className="col-4" draggable="true">
+    <div
+      className="col-4"
+      onDragStart={() => setDraggingBlock(name)}
+      draggable="true"
+    >
       <Block name={name} />
     </div>
   );

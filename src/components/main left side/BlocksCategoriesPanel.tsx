@@ -4,7 +4,13 @@ import BlockCategories from "../../data/BlockCategories";
 import BlockCategoriesButton from "./BlockCategoriesButton";
 import CategoryItemsSection from "./CategoryItemsSection";
 
-function BlocksCategoriesPanel() {
+interface BlockCategoriesPanelProps {
+  setDraggingBlock: (draggingBlockName: string) => void;
+}
+
+function BlocksCategoriesPanel({
+  setDraggingBlock,
+}: BlockCategoriesPanelProps) {
   const [activeSection, setActiveSection] = useState(BlockCategories[0]);
   function handleButtonClick(category: string) {
     setActiveSection(category);
@@ -25,6 +31,7 @@ function BlocksCategoriesPanel() {
               category={category}
               activeSection={activeSection}
               blockItems={BlockItems}
+              setDraggingBlock={setDraggingBlock}
             />
           </div>
         ))}

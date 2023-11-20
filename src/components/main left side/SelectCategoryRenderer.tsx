@@ -3,15 +3,19 @@ import BlocksCategoriesPanel from "./BlocksCategoriesPanel";
 
 interface SelectCategoryRendererProps {
   value: string;
+  setDraggingBlock: (draggingBlockName: string) => void;
 }
 
-function SelectCategoryRenderer({ value }: SelectCategoryRendererProps) {
+function SelectCategoryRenderer({
+  value,
+  setDraggingBlock,
+}: SelectCategoryRendererProps) {
   return (
     <>
       {value.toLowerCase() === "sve" ? (
-        <BlocksPanel />
+        <BlocksPanel setDraggingBlock={setDraggingBlock} />
       ) : (
-        <BlocksCategoriesPanel />
+        <BlocksCategoriesPanel setDraggingBlock={setDraggingBlock} />
       )}
     </>
   );

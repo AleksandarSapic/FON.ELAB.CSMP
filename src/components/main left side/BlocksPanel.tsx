@@ -1,12 +1,20 @@
 import BlockItems from "../../data/BlockItems";
 import DraggableBlock from "./DraggableBlock";
 
-function BlocksPanel() {
+interface BlockPanelProps {
+  setDraggingBlock: (draggingBlockName: string) => void;
+}
+
+function BlocksPanel({ setDraggingBlock }: BlockPanelProps) {
   return (
     <>
       <div className="d-flex flex-wrap blocks-panel">
         {BlockItems.map((block) => (
-          <DraggableBlock key={block.id} name={block.name} />
+          <DraggableBlock
+            key={block.id}
+            name={block.name}
+            setDraggingBlock={setDraggingBlock}
+          />
         ))}
       </div>
     </>
