@@ -9,7 +9,9 @@ function OneInputParameter({
 }: ISetParameterSectionProps) {
   return (
     <div className="d-flex justify-content-between">
-      <label htmlFor={inputTagContent}>{spanText}</label>
+      <label className={readonly ? "readonly" : ""} htmlFor={inputTagContent}>
+        {spanText}
+      </label>
       <input
         type="text"
         className="w-50"
@@ -18,6 +20,7 @@ function OneInputParameter({
         onChange={onChange}
         autoComplete="off"
         value={value}
+        defaultValue={"0"}
         readOnly={readonly}
       />
     </div>
