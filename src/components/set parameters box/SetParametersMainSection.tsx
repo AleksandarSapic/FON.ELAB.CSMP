@@ -10,9 +10,9 @@ import SetParametersButtonsSection from "./SetParametersButtonsSection";
 
 function SetParametersMainSection() {
   const [formData, setFormData] = useState({
-    parametar1: "",
-    parametar2: "",
-    parametar3: "",
+    parametar1: "0",
+    parametar2: "0",
+    parametar3: "0",
   });
 
   const showSetBox = useContext(ShowSetBoxContext);
