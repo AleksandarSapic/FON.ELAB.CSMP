@@ -54,15 +54,19 @@ function SetParametersMainSection() {
     });
   };
 
+  const handleDecline = () => {
+    showSetBox(false);
+    setFormData({
+      parametar1: "",
+      parametar2: "",
+      parametar3: "",
+    });
+  };
+
   return (
     <div className="d-flex flex-column">
       <span className="align-self-end">Napomena</span>
-      <form
-        onSubmit={handleSubmit}
-        onReset={() => {
-          showSetBox(false);
-        }}
-      >
+      <form onSubmit={handleSubmit} onReset={handleDecline}>
         <InputParametersSection
           handleInputChange={handleInputChange}
           formData={formData}
