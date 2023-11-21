@@ -1,6 +1,8 @@
 /*GENERAL*/
 :root {
     --header-height: 70px;
+    --setBox-height: 200px;
+    --setBox-width: 300px;
 }
 
 #root {
@@ -97,8 +99,21 @@
 /* SET PARAMETERS BOX START*/
 
 .set-parameters-box {
-    width: 300px;
-    height: 200px;
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: calc(50% - (var(--setBox-height)/2));
+    left: calc(50% - (var(--setBox-width)/2));
+    width: var(--setBox-width);
+    height: var(--setBox-height);
+    z-index: 99;
+    background-color: white;
+}
+
+.show-set-box {
+    display: flex;
 }
 
 /* SET PARAMETERS BOX END*/

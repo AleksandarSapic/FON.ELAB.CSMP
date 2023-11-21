@@ -1,37 +1,25 @@
 import { useContext } from "react";
 
-import DraggingBlockContext from "../../hooks/DraggingBlockContext";
 import DraggedBlocksContext from "../../hooks/DraggedBlocksContext";
 import DraggedBlock from "./DraggedBlock";
-import IDragAreaFunctionProp from "../../interfaces/IDragAreaFunctionProp";
+import IDraggedBlock from "../../interfaces/IDraggedBlock";
+import DraggingBlockContext from "../../hooks/DraggingBlockContext";
 
-function DragContainer({ increment }: IDragAreaFunctionProp) {
+interface DragContainerProps {
+  handleDrop: (blockName: string) => void;
+}
+
+function DragContainer({ handleDrop }: DragContainerProps) {
   const blocks = useContext(DraggedBlocksContext);
   const draggingBlock = useContext(DraggingBlockContext);
-
-  function handleDrop(e: React.DragEvent) {
-    e.preventDefault();
-    increment({
-      id: blocks.length + 1,
-      name: draggingBlock,
-      input: {
-        input1: "Default Input",
-        input2: null,
-        input3: null,
-      },
-      parameter: {
-        parameter1: 0,
-        parameter2: null,
-        parameter3: 0,
-      },
-      output: "Default Output",
-    });
-  }
 
   return (
     <div
       className="drag-container"
-      onDrop={handleDrop}
+      onDrop={(e: React.DragEvent) => {
+        e.preventDefault();
+        handleDrop(draggingBlock);
+      }}
       onDragOver={(e: React.DragEvent) => {
         e.preventDefault();
       }}

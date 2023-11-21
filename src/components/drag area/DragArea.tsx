@@ -1,10 +1,13 @@
 import DragContainer from "./DragContainer";
-import IDragAreaFunctionProp from "../../interfaces/IDragAreaFunctionProp";
 
-function DragArea({ increment }: IDragAreaFunctionProp) {
+interface DragAreaProps {
+  handleDrop: (blockName: string) => void;
+}
+
+function DragArea({ handleDrop }: DragAreaProps) {
   return (
     <div className="w-50 drag-area">
-      <DragContainer increment={increment} />
+      <DragContainer handleDrop={handleDrop} />
     </div>
   );
 }

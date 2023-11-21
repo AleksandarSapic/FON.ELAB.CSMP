@@ -4,12 +4,13 @@ function SetParametersButton({
   buttonText,
   imgAlt,
   imgSrc,
+  buttonType,
 }: ISetParametersButtonProps) {
   return (
     <>
       <div className="d-flex">
         <img src={imgSrc} alt={imgAlt} />
-        <button type="button">{buttonText}</button>
+        <button type={buttonType}>{buttonText}</button>
       </div>
     </>
   );

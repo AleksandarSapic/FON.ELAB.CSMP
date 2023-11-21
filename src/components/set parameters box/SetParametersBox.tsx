@@ -1,8 +1,12 @@
 import SetParametersMainSection from "./SetParametersMainSection";
 
-function SetParametersBox() {
+interface SetParametersBoxProps {
+  display: boolean;
+}
+
+function SetParametersBox({ display }: SetParametersBoxProps) {
   return (
-    <div className="d-flex flex-column justify-content-center align-items-center set-parameters-box">
+    <div className={`set-parameters-box ${display && "show-set-box"}`}>
       <span>Unesite vrednosti parametara</span>
       <SetParametersMainSection />
     </div>

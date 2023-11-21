@@ -7,11 +7,13 @@ function SetParametersButtonsSection() {
         buttonText="Prihvati"
         imgAlt="Accept Icon"
         imgSrc="/src/assets/svg/check.svg"
+        buttonType="submit"
       />
       <SetParametersButton
         buttonText="Odustani"
         imgAlt="Decline Icon"
         imgSrc="/src/assets/svg/clear.svg"
+        buttonType="reset"
       />
     </div>
   );
