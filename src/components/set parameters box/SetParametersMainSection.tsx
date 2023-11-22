@@ -8,6 +8,8 @@ import DraggedBlocksContext from "../../hooks/DraggedBlocksContext";
 import InputParametersSection from "./InputParametersSection";
 import SetParametersButtonsSection from "./SetParametersButtonsSection";
 
+import BlockItems from "../../data/BlockItems";
+
 function SetParametersMainSection() {
   const [formData, setFormData] = useState({
     parametar1: "0",
@@ -31,6 +33,9 @@ function SetParametersMainSection() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     showSetBox(false);
+    const selectedBlock = BlockItems.find(
+      (block) => block.name === draggingBlock
+    );
     addBlock({
       id: blocks.length + 1,
       name: draggingBlock,
@@ -40,9 +45,15 @@ function SetParametersMainSection() {
         input3: null,
       },
       parameter: {
-        parameter1: +formData.parametar1,
-        parameter2: +formData.parametar1,
-        parameter3: +formData.parametar1,
+        parameter1: selectedBlock?.formView.parametar1.readonly
+          ? null
+          : +formData.parametar1,
+        parameter2: selectedBlock?.formView.parametar2.readonly
+          ? null
+          : +formData.parametar2,
+        parameter3: selectedBlock?.formView.parametar3.readonly
+          ? null
+          : +formData.parametar3,
       },
       output: "Default Output",
     });
