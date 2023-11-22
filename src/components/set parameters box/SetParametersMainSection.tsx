@@ -31,7 +31,6 @@ function SetParametersMainSection() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     showSetBox(false);
-    console.log(formData);
     addBlock({
       id: blocks.length + 1,
       name: draggingBlock,
@@ -48,18 +47,18 @@ function SetParametersMainSection() {
       output: "Default Output",
     });
     setFormData({
-      parametar1: "",
-      parametar2: "",
-      parametar3: "",
+      parametar1: "0",
+      parametar2: "0",
+      parametar3: "0",
     });
   };
 
   const handleDecline = () => {
     showSetBox(false);
     setFormData({
-      parametar1: "",
-      parametar2: "",
-      parametar3: "",
+      parametar1: "0",
+      parametar2: "0",
+      parametar3: "0",
     });
   };
 
