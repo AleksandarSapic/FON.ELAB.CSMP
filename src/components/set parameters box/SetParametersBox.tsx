@@ -1,12 +1,8 @@
 import SetParametersMainSection from "./SetParametersMainSection";
 
-interface SetParametersBoxProps {
-  display: boolean;
-}
-
-function SetParametersBox({ display }: SetParametersBoxProps) {
+function SetParametersBox() {
   return (
-    <div className={`set-parameters-box ${display && "show-set-box"}`}>
+    <div className="set-parameters-box">
       <span>Unesite vrednosti parametara</span>
       <SetParametersMainSection />
     </div>

@@ -91,7 +91,7 @@ function App() {
               }}
             >
               <FormContext.Provider value={formView}>
-                <SetParametersBox display={displaySetBox} />
+                {displaySetBox && <SetParametersBox />}
               </FormContext.Provider>
             </AddDraggedBlockContext.Provider>
           </DraggingBlockContext.Provider>

@@ -57,20 +57,10 @@ function SetParametersMainSection() {
       },
       output: "Default Output",
     });
-    setFormData({
-      parametar1: "0",
-      parametar2: "0",
-      parametar3: "0",
-    });
   };
 
   const handleDecline = () => {
     showSetBox(false);
-    setFormData({
-      parametar1: "0",
-      parametar2: "0",
-      parametar3: "0",
-    });
   };
 
   return (

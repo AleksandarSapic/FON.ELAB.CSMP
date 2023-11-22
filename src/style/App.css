@@ -100,7 +100,7 @@
 
 .set-parameters-box {
     position: absolute;
-    display: none;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -110,10 +110,6 @@
     height: var(--setBox-height);
     z-index: 99;
     background-color: white;
-}
-
-.show-set-box {
-    display: flex;
 }
 
 .readonly {
