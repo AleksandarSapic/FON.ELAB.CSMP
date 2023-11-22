@@ -19,21 +19,19 @@ function CategoryItemsSection({
   setDraggingBlock,
 }: CategoryItemsSectionProps) {
   return (
-    <div
-      className={`category-items-section ${
-        activeSection === category ? "active-category-section" : ""
-      }`}
-    >
-      {blockItems
-        .filter((block) => block.category === category)
-        .map((item) => (
-          <DraggableBlock
-            key={item.id}
-            name={item.name}
-            setDraggingBlock={setDraggingBlock}
-          />
-        ))}
-    </div>
+    activeSection === category && (
+      <div className="category-items-section">
+        {blockItems
+          .filter((block) => block.category === category)
+          .map((item) => (
+            <DraggableBlock
+              key={item.id}
+              name={item.name}
+              setDraggingBlock={setDraggingBlock}
+            />
+          ))}
+      </div>
+    )
   );
 }
 

@@ -31,18 +31,14 @@
 }
 
 .category-items-section {
-    display: none;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .block {
     text-align: center;
     box-sizing: border-box;
     padding: 1rem;
-}
-
-.active-category-section {
-    display: flex;
-    flex-wrap: wrap;
 }
 
 /* MAIN LEFT SIDE - END */
