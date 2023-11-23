@@ -14,7 +14,7 @@ function DragContainer({ handleDrop }: DragContainerProps) {
 
   return (
     <div
-      className="drag-container"
+      className="position-absolute drag-container"
       onDrop={(e: React.DragEvent) => {
         e.preventDefault();
         handleDrop(draggingBlock);

@@ -20,7 +20,7 @@ function CategoryItemsSection({
 }: CategoryItemsSectionProps) {
   return (
     activeSection === category && (
-      <div className="category-items-section">
+      <div className="d-flex flex-wrap category-items-section">
         {blockItems
           .filter((block) => block.category === category)
           .map((item) => (

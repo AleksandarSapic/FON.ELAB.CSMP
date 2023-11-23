@@ -6,7 +6,7 @@ interface DragAreaProps {
 
 function DragArea({ handleDrop }: DragAreaProps) {
   return (
-    <div className="w-50 drag-area">
+    <div className="position-relative w-50 drag-area">
       <DragContainer handleDrop={handleDrop} />
     </div>
   );
