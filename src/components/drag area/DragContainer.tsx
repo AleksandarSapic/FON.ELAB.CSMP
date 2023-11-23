@@ -2,7 +2,6 @@ import { useContext } from "react";
 
 import DraggedBlocksContext from "../../hooks/DraggedBlocksContext";
 import DraggedBlock from "./DraggedBlock";
-import IDraggedBlock from "../../interfaces/IDraggedBlock";
 import DraggingBlockContext from "../../hooks/DraggingBlockContext";
 
 interface DragContainerProps {
