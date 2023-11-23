@@ -20,7 +20,6 @@ function OneInputParameter({
         onChange={onChange}
         autoComplete="off"
         value={value}
-        defaultValue={"0"}
         readOnly={readonly}
       />
     </div>
