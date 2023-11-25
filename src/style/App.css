@@ -58,9 +58,7 @@
 
 /* MAIN RIGHT SIDE - START */
 
-.dragged-blocks-list,
-.input-parameters,
-.output-parameters {
+.dragged-blocks-list {
     height: 33%;
 }
 
