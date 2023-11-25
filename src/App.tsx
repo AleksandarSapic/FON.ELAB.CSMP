@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 
 import ShowSetBoxContext from "./hooks/ShowSetBoxContext";
 import DraggedBlocksContext from "./hooks/DraggedBlocksContext";
 import AddDraggedBlockContext from "./hooks/AddDraggedBlockContext";
 import DraggingBlockContext from "./hooks/DraggingBlockContext";
 import FormContext from "./hooks/FormContext";
+import SelectedDraggedBlockContext from "./hooks/SelectedDraggedBlockContext";
 
 import AppHeader from "./components/header/AppHeader";
 import MainArea from "./components/MainArea";
@@ -13,6 +14,7 @@ import "./style/App.css";
 
 import BlockItems from "./data/BlockItems";
 import IDraggedBlock from "./interfaces/IDraggedBlock";
+import SetSelectedDraggedBlockContext from "./hooks/SetSelectedDraggedBlockContext";
 
 function App() {
   const [draggingBlock, setDraggingBlock] = useState("");
@@ -32,6 +34,9 @@ function App() {
       readonly: false,
     },
   });
+  const [selectedBlock, setSelectedBlock] = useState(
+    useContext(SelectedDraggedBlockContext)
+  );
 
   const handleDraggingBlock = (draggingBlockName: string) => {
     setDraggingBlock(draggingBlockName);
@@ -44,7 +49,7 @@ function App() {
         id: blocks.length + 1,
         name: draggingBlock,
         input: {
-          input1: "Default Input",
+          input1: null,
           input2: null,
           input3: null,
         },
@@ -53,9 +58,10 @@ function App() {
           parameter2: null,
           parameter3: null,
         },
-        output: "Default Output",
+        output: null,
       };
       addBlock([...blocks, block]);
+      setSelectedBlock(block);
     } else {
       setFormView({
         parametar1: {
@@ -81,19 +87,25 @@ function App() {
       <ShowSetBoxContext.Provider value={setDisplaySetBox}>
         <DraggedBlocksContext.Provider value={blocks}>
           <DraggingBlockContext.Provider value={draggingBlock}>
-            <MainArea
-              setDraggingBlock={handleDraggingBlock}
-              handleDrop={handleDrop}
-            />
-            <AddDraggedBlockContext.Provider
-              value={(newBlock) => {
-                addBlock([...blocks, newBlock]);
-              }}
+            <SetSelectedDraggedBlockContext.Provider
+              value={(block) => setSelectedBlock(block)}
             >
-              <FormContext.Provider value={formView}>
-                {displaySetBox && <SetParametersBox />}
-              </FormContext.Provider>
-            </AddDraggedBlockContext.Provider>
+              <SelectedDraggedBlockContext.Provider value={selectedBlock}>
+                <MainArea
+                  setDraggingBlock={handleDraggingBlock}
+                  handleDrop={handleDrop}
+                />
+              </SelectedDraggedBlockContext.Provider>
+              <AddDraggedBlockContext.Provider
+                value={(newBlock) => {
+                  addBlock([...blocks, newBlock]);
+                }}
+              >
+                <FormContext.Provider value={formView}>
+                  {displaySetBox && <SetParametersBox />}
+                </FormContext.Provider>
+              </AddDraggedBlockContext.Provider>
+            </SetSelectedDraggedBlockContext.Provider>
           </DraggingBlockContext.Provider>
         </DraggedBlocksContext.Provider>
       </ShowSetBoxContext.Provider>

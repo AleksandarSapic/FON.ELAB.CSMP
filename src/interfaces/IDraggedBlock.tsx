@@ -6,6 +6,6 @@ interface IDraggedBlock {
   name: string;
   input: IInputs;
   parameter: IParameters;
-  output: string;
+  output: IDraggedBlock | null;
 }
 export default IDraggedBlock;

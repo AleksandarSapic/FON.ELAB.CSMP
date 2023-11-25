@@ -4,6 +4,7 @@ import ShowSetBoxContext from "../../hooks/ShowSetBoxContext";
 import AddDraggedBlockContext from "../../hooks/AddDraggedBlockContext";
 import DraggingBlockContext from "../../hooks/DraggingBlockContext";
 import DraggedBlocksContext from "../../hooks/DraggedBlocksContext";
+import SetSelectedDraggedBlockContext from "../../hooks/SetSelectedDraggedBlockContext";
 
 import InputParametersSection from "./InputParametersSection";
 import SetParametersButtonsSection from "./SetParametersButtonsSection";
@@ -21,6 +22,7 @@ function SetParametersMainSection() {
   const addBlock = useContext(AddDraggedBlockContext);
   const draggingBlock = useContext(DraggingBlockContext);
   const blocks = useContext(DraggedBlocksContext);
+  const setSelectedBlock = useContext(SetSelectedDraggedBlockContext);
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -36,11 +38,11 @@ function SetParametersMainSection() {
     const selectedBlock = BlockItems.find(
       (block) => block.name === draggingBlock
     );
-    addBlock({
+    const block = {
       id: blocks.length + 1,
       name: draggingBlock,
       input: {
-        input1: "Default Input",
+        input1: null,
         input2: null,
         input3: null,
       },
@@ -55,8 +57,10 @@ function SetParametersMainSection() {
           ? null
           : +formData.parametar3,
       },
-      output: "Default Output",
-    });
+      output: null,
+    };
+    addBlock(block);
+    setSelectedBlock(block);
   };
 
   const handleDecline = () => {

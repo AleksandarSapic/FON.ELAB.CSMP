@@ -1,7 +1,9 @@
+import IDraggedBlock from "./IDraggedBlock";
+
 interface IInputs {
-  input1?: string | null;
-  input3?: string | null;
-  input2?: string | null;
+  input1?: IDraggedBlock | null;
+  input3?: IDraggedBlock | null;
+  input2?: IDraggedBlock | null;
 }
 
 export default IInputs;

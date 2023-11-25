@@ -1,8 +1,18 @@
 import { useContext } from "react";
 import DraggedBlocksContext from "../../hooks/DraggedBlocksContext";
+import SetSelectedDraggedBlockContext from "../../hooks/SetSelectedDraggedBlockContext";
 
 function DraggedBlocksList() {
   const blocks = useContext(DraggedBlocksContext);
+  const callSetSelectedBlock = useContext(SetSelectedDraggedBlockContext);
+
+  function setSelectedBlock(id: number) {
+    const block = blocks.find((block) => block.id === id);
+    if (block !== undefined) {
+      callSetSelectedBlock(block);
+    }
+  }
+
   return (
     <>
       <div className="d-flex flex-column dragged-blocks-list">
@@ -11,7 +21,9 @@ function DraggedBlocksList() {
         </span>
         {blocks.map((block) => (
           <div key={block.id} className="one-dragged-block-section">
-            <span>{`${block.id}. ${block.name}`}</span>
+            <span
+              onClick={() => setSelectedBlock(block.id)}
+            >{`${block.id}. ${block.name}`}</span>
           </div>
         ))}
       </div>
