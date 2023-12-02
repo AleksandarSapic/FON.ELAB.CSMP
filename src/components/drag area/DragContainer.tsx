@@ -1,32 +1,22 @@
 import { useContext } from "react";
+import { Stage, Layer, Rect, Text, Label } from "react-konva";
 
 import DraggedBlocksContext from "../../hooks/DraggedBlocksContext";
-import DraggedBlock from "./DraggedBlock";
-import DraggingBlockContext from "../../hooks/DraggingBlockContext";
 
-interface DragContainerProps {
-  handleDrop: (blockName: string) => void;
-}
-
-function DragContainer({ handleDrop }: DragContainerProps) {
+function DragContainer() {
   const blocks = useContext(DraggedBlocksContext);
-  const draggingBlock = useContext(DraggingBlockContext);
 
   return (
-    <div
-      className="position-absolute drag-container"
-      onDrop={(e: React.DragEvent) => {
-        e.preventDefault();
-        handleDrop(draggingBlock);
-      }}
-      onDragOver={(e: React.DragEvent) => {
-        e.preventDefault();
-      }}
-    >
-      {blocks.map((block) => (
-        <DraggedBlock key={block.id} name={block.name} />
-      ))}
-    </div>
+    <Stage width={1000} height={1000}>
+      <Layer>
+        {blocks.map((block) => (
+          <Label key={block.id} x={block.x} y={block.y} draggable>
+            <Rect width={100} height={40} fill="red" shadowBlur={10} />
+            <Text text={block.id + " " + block.name} fontSize={15} />
+          </Label>
+        ))}
+      </Layer>
+    </Stage>
   );
 }
 export default DragContainer;

@@ -4,15 +4,14 @@ import RightAside from "./main right side/RightAside";
 
 interface MainAreaProps {
   setDraggingBlock: (draggingBlockName: string) => void;
-  handleDrop: (blockName: string) => void;
 }
 
-function MainArea({ setDraggingBlock, handleDrop }: MainAreaProps) {
+function MainArea({ setDraggingBlock }: MainAreaProps) {
   return (
     <>
       <div className="d-flex main-area">
         <LeftAside setDraggingBlock={setDraggingBlock} />
-        <DragArea handleDrop={handleDrop} />
+        <DragArea />
         <RightAside />
       </div>
     </>

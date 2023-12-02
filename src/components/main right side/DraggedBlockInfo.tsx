@@ -3,7 +3,6 @@ import SelectedDraggedBlockContext from "../../hooks/SelectedDraggedBlockContext
 
 function DraggedBlockInfo() {
   const block = useContext(SelectedDraggedBlockContext);
-  console.log(block);
   return (
     <>
       <div className="d-flex flex-column block-info-section">

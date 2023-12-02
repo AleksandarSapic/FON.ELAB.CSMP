@@ -7,5 +7,7 @@ interface IDraggedBlock {
   input: IInputs;
   parameter: IParameters;
   output: IDraggedBlock | null;
+  x: number;
+  y: number;
 }
 export default IDraggedBlock;

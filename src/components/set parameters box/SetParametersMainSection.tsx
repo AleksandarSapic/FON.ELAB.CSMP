@@ -36,11 +36,11 @@ function SetParametersMainSection() {
     e.preventDefault();
     showSetBox(false);
     const selectedBlock = BlockItems.find(
-      (block) => block.name === draggingBlock
+      (block) => block.name === draggingBlock.name
     );
     const block = {
       id: blocks.length + 1,
-      name: draggingBlock,
+      name: draggingBlock.name,
       input: {
         input1: null,
         input2: null,
@@ -58,6 +58,8 @@ function SetParametersMainSection() {
           : +formData.parametar3,
       },
       output: null,
+      x: draggingBlock.x,
+      y: draggingBlock.y,
     };
     addBlock(block);
     setSelectedBlock(block);

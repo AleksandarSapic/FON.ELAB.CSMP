@@ -15,6 +15,8 @@ const SelectedDraggedBlockContext = createContext<IDraggedBlock>({
     parameter3: null,
   },
   output: null,
+  x: 0,
+  y: 0,
 });
 
 export default SelectedDraggedBlockContext;
