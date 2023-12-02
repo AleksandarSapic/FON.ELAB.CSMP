@@ -13,12 +13,19 @@ function DragContainer() {
           <Label key={block.id} x={block.x} y={block.y} draggable>
             <Rect
               width={100}
-              height={40}
+              height={60}
               fill="#f1f2f4"
               shadowBlur={10}
               shadowColor="#808080"
             />
-            <Text text={block.id + " " + block.name} fontSize={15} />
+            <Text
+              text={block.id + " " + block.name}
+              fontSize={15}
+              width={100}
+              height={60}
+              align="center"
+              verticalAlign="middle"
+            />
           </Label>
         ))}
       </Layer>
