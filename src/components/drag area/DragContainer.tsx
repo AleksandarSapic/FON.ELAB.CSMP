@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Stage, Layer, Rect, Text, Label } from "react-konva";
+import { Stage, Layer, Rect, Text, Label, Line } from "react-konva";
 
 import DraggedBlocksContext from "../../hooks/DraggedBlocksContext";
 
@@ -11,7 +11,13 @@ function DragContainer() {
       <Layer>
         {blocks.map((block) => (
           <Label key={block.id} x={block.x} y={block.y} draggable>
-            <Rect width={100} height={40} fill="red" shadowBlur={10} />
+            <Rect
+              width={100}
+              height={40}
+              fill="#f1f2f4"
+              shadowBlur={10}
+              shadowColor="#808080"
+            />
             <Text text={block.id + " " + block.name} fontSize={15} />
           </Label>
         ))}
