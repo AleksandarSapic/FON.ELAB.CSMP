@@ -21,7 +21,7 @@ function App() {
   const [draggingBlock, setDraggingBlock] = useState(
     useContext(DraggingBlockContext)
   );
-  const [blocks, addBlock] = useState<IDraggedBlock[]>([]);
+  const [blocks, setBlocks] = useState<IDraggedBlock[]>([]);
   const [displaySetBox, setDisplaySetBox] = useState(false);
   const [formView, setFormView] = useState({
     parametar1: {
@@ -53,7 +53,7 @@ function App() {
     <>
       <AppHeader />
       <ShowSetBoxContext.Provider value={setDisplaySetBox}>
-        <DraggedBlocksContext.Provider value={blocks}>
+        <DraggedBlocksContext.Provider value={{ blocks, setBlocks }}>
           <DraggingBlockContext.Provider value={draggingBlock}>
             <SetSelectedDraggedBlockContext.Provider
               value={(block) => setSelectedBlock(block)}
@@ -86,7 +86,7 @@ function App() {
                         x: xCoordinate,
                         y: yCoordinate,
                       };
-                      addBlock([...blocks, block]);
+                      setBlocks([...blocks, block]);
                       setSelectedBlock(block);
                     } else {
                       setDraggingBlock({
@@ -129,7 +129,7 @@ function App() {
               </SelectedDraggedBlockContext.Provider>
               <AddDraggedBlockContext.Provider
                 value={(newBlock) => {
-                  addBlock([...blocks, newBlock]);
+                  setBlocks([...blocks, newBlock]);
                 }}
               >
                 <FormContext.Provider value={formView}>
