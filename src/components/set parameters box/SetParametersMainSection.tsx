@@ -10,6 +10,7 @@ import InputParametersSection from "./InputParametersSection";
 import SetParametersButtonsSection from "./SetParametersButtonsSection";
 
 import BlockItems from "../../data/BlockItems";
+import IDraggedBlock from "../../interfaces/IDraggedBlock";
 
 function SetParametersMainSection() {
   const [formData, setFormData] = useState({
@@ -21,7 +22,8 @@ function SetParametersMainSection() {
   const showSetBox = useContext(ShowSetBoxContext);
   const addBlock = useContext(AddDraggedBlockContext);
   const draggingBlock = useContext(DraggingBlockContext);
-  const blocks = useContext(DraggedBlocksContext);
+  const draggedBlocksContext = useContext(DraggedBlocksContext);
+  const blocks = draggedBlocksContext?.blocks;
   const setSelectedBlock = useContext(SetSelectedDraggedBlockContext);
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -38,8 +40,8 @@ function SetParametersMainSection() {
     const selectedBlock = BlockItems.find(
       (block) => block.name === draggingBlock.name
     );
-    const block = {
-      id: blocks.length + 1,
+    const block: IDraggedBlock = {
+      id: blocks && blocks.length + 1,
       name: draggingBlock.name,
       input: {
         input1: null,

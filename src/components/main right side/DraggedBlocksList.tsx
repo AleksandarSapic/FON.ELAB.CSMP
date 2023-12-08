@@ -3,11 +3,12 @@ import DraggedBlocksContext from "../../hooks/DraggedBlocksContext";
 import SetSelectedDraggedBlockContext from "../../hooks/SetSelectedDraggedBlockContext";
 
 function DraggedBlocksList() {
-  const blocks = useContext(DraggedBlocksContext);
+  const draggedBlocksContext = useContext(DraggedBlocksContext);
+  const blocks = draggedBlocksContext?.blocks;
   const callSetSelectedBlock = useContext(SetSelectedDraggedBlockContext);
 
   function setSelectedBlock(id: number) {
-    const block = blocks.find((block) => block.id === id);
+    const block = blocks?.find((block) => block.id === id);
     if (block !== undefined) {
       callSetSelectedBlock(block);
     }
@@ -19,7 +20,7 @@ function DraggedBlocksList() {
         <span className="position-sticky text-center dragged-blocks-list-title">
           Blokovi
         </span>
-        {blocks.map((block) => (
+        {blocks?.map((block) => (
           <div key={block.id} className="one-dragged-block-section">
             <span
               onClick={() => setSelectedBlock(block.id)}
