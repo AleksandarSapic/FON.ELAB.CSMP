@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Stage, Layer, Rect, Text, Label, Line } from "react-konva";
+import { Stage, Layer, Rect, Text, Label, Arrow } from "react-konva";
 import { KonvaEventObject } from "konva/lib/Node";
 import BlockItems from "../../data/BlockItems";
 import ErrorMessages from "../../data/ErrorMessages";
@@ -11,6 +11,11 @@ import SetSelectedDraggedBlockContext from "../../hooks/SetSelectedDraggedBlockC
 import IDraggedBlock from "../../interfaces/IDraggedBlock";
 import ConnectionBlocksContext from "../../hooks/ConnectionBlocksContext";
 import ErrorBoxContext from "../../hooks/ErrorBoxContext";
+
+const shapeSize = {
+  width: 100,
+  height: 60,
+};
 
 function DragContainer() {
   const outputBoxContext = useContext(SetOutputBoxContext);
@@ -166,8 +171,8 @@ function DragContainer() {
               }}
             >
               <Rect
-                width={100}
-                height={60}
+                width={shapeSize.width}
+                height={shapeSize.height}
                 fill="#f1f2f4"
                 shadowBlur={10}
                 shadowColor="#808080"
@@ -183,15 +188,33 @@ function DragContainer() {
             </Label>
           );
         })}
+        {blocks?.map((block) => {
+          return (
+            block.output && (
+              <Arrow
+                key={`line-${block.id}`}
+                points={getPoints(
+                  block,
+                  blocks.find(
+                    (blockIterator) => blockIterator.id === block.output?.id
+                  )
+                )}
+                stroke="black"
+                strokeWidth={2}
+              />
+            )
+          );
+        })}
       </Layer>
     </Stage>
   );
 }
 export default DragContainer;
-function areInputsUsed(
+
+const areInputsUsed = (
   block: IDraggedBlock,
   numberOfInputs: number | undefined
-) {
+) => {
   if (numberOfInputs === 1) {
     return block.input.input1 !== null;
   } else if (numberOfInputs === 2) {
@@ -203,4 +226,77 @@ function areInputsUsed(
       block.input.input3 !== null
     );
   }
-}
+};
+
+const getCenter = (block: IDraggedBlock) => {
+  return {
+    x: block.x + shapeSize.width / 2,
+    y: block.y + shapeSize.height / 2,
+  };
+};
+
+const getPoints = (
+  block1: IDraggedBlock,
+  block2: IDraggedBlock | undefined
+) => {
+  if (block2 === undefined) return [0, 0, 0, 0];
+
+  const c1 = getCenter(block1);
+  const c2 = getCenter(block2);
+
+  const dx = c1.x - c2.x;
+  const dy = c1.y - c2.y;
+  const angle = Math.atan2(-dy, dx);
+
+  const startOffset = getRectangleBorderPoint(angle + Math.PI);
+  const endOffset = getRectangleBorderPoint(angle);
+
+  const start = {
+    x: c1.x - startOffset.x,
+    y: c1.y - startOffset.y,
+  };
+
+  const end = {
+    x: c2.x - endOffset.x,
+    y: c2.y - endOffset.y,
+  };
+
+  return [start.x, start.y, end.x, end.y];
+};
+
+const getRectangleBorderPoint = (radians: number, sideOffset: number = 0) => {
+  const width = shapeSize.width + sideOffset * 2;
+
+  const height = shapeSize.height + sideOffset * 2;
+
+  radians %= 2 * Math.PI;
+  if (radians < 0) {
+    radians += Math.PI * 2;
+  }
+
+  const phi = Math.atan(height / width);
+
+  let x = 0,
+    y = 0;
+  if (
+    (radians >= 2 * Math.PI - phi && radians <= 2 * Math.PI) ||
+    (radians >= 0 && radians <= phi)
+  ) {
+    x = width / 2;
+    y = Math.tan(radians) * x;
+  } else if (radians >= phi && radians <= Math.PI - phi) {
+    y = height / 2;
+    x = y / Math.tan(radians);
+  } else if (radians >= Math.PI - phi && radians <= Math.PI + phi) {
+    x = -width / 2;
+    y = Math.tan(radians) * x;
+  } else if (radians >= Math.PI + phi && radians <= 2 * Math.PI - phi) {
+    y = -height / 2;
+    x = y / Math.tan(radians);
+  }
+
+  return {
+    x: -Math.round(x),
+    y: Math.round(y),
+  };
+};
