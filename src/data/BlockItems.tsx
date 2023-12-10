@@ -3,6 +3,7 @@ const BlockItems = [
     id: 1,
     category: "Trigonometrija",
     name: "ArcTan",
+    numberOfInputs: 1,
     numberOfParameters: 3,
     formView: {
       parametar1: { title: "Parametar 1:", readonly: false },
@@ -14,6 +15,7 @@ const BlockItems = [
     id: 2,
     category: "Osnovni matematički",
     name: "Sign",
+    numberOfInputs: 1,
     numberOfParameters: 0,
     formView: {
       parametar1: { title: "Parametar 1:", readonly: true },
@@ -25,6 +27,7 @@ const BlockItems = [
     id: 3,
     category: "Trigonometrija",
     name: "Cos",
+    numberOfInputs: 1,
     numberOfParameters: 3,
     formView: {
       parametar1: { title: "Parametar 1:", readonly: false },
@@ -36,6 +39,7 @@ const BlockItems = [
     id: 4,
     category: "Razno",
     name: "Mrtva zona",
+    numberOfInputs: 1,
     numberOfParameters: 2,
     formView: {
       parametar1: { title: "Donja granica:", readonly: false },
@@ -47,6 +51,7 @@ const BlockItems = [
     id: 5,
     category: "Osnovni matematički",
     name: "Exp",
+    numberOfInputs: 1,
     numberOfParameters: 3,
     formView: {
       parametar1: { title: "Parametar 1:", readonly: false },
@@ -58,6 +63,7 @@ const BlockItems = [
     id: 6,
     category: "Generatori",
     name: "Generator funkcija",
+    numberOfInputs: 1,
     numberOfParameters: 2,
     formView: {
       parametar1: { title: "Parametar 1:", readonly: false },
@@ -69,6 +75,7 @@ const BlockItems = [
     id: 7,
     category: "Osnovni matematički",
     name: "Pojačanje",
+    numberOfInputs: 1,
     numberOfParameters: 1,
     formView: {
       parametar1: { title: "Parametar:", readonly: false },
@@ -80,6 +87,7 @@ const BlockItems = [
     id: 8,
     category: "Osnovni matematički",
     name: "Kvadratni koren",
+    numberOfInputs: 1,
     numberOfParameters: 0,
     formView: {
       parametar1: { title: "Parametar 1:", readonly: true },
@@ -91,6 +99,7 @@ const BlockItems = [
     id: 9,
     category: "Razno",
     name: "Integrator",
+    numberOfInputs: 3,
     numberOfParameters: 3,
     formView: {
       parametar1: { title: "Parametar 1:", readonly: false },
@@ -102,6 +111,7 @@ const BlockItems = [
     id: 10,
     category: "Generatori",
     name: "Generator slučajnih brojeva",
+    numberOfInputs: 0,
     numberOfParameters: 0,
     formView: {
       parametar1: { title: "Parametar 1:", readonly: true },
@@ -113,6 +123,7 @@ const BlockItems = [
     id: 11,
     category: "Osnovni matematički",
     name: "Konstanta",
+    numberOfInputs: 0,
     numberOfParameters: 1,
     formView: {
       parametar1: { title: "Vrednost:", readonly: false },
@@ -124,6 +135,7 @@ const BlockItems = [
     id: 12,
     category: "Ograničavači",
     name: "Ograničavač",
+    numberOfInputs: 1,
     numberOfParameters: 2,
     formView: {
       parametar1: { title: "Donja granica:", readonly: false },
@@ -135,6 +147,7 @@ const BlockItems = [
     id: 13,
     category: "Osnovni matematički",
     name: "Apsolutna vrednost",
+    numberOfInputs: 1,
     numberOfParameters: 0,
     formView: {
       parametar1: { title: "Parametar 1:", readonly: true },
@@ -146,6 +159,7 @@ const BlockItems = [
     id: 14,
     category: "Ograničavači",
     name: "Negativni ograničavač",
+    numberOfInputs: 1,
     numberOfParameters: 0,
     formView: {
       parametar1: { title: "Parametar 1:", readonly: true },
@@ -157,6 +171,7 @@ const BlockItems = [
     id: 15,
     category: "Osnovni matematički",
     name: "Offset",
+    numberOfInputs: 1,
     numberOfParameters: 1,
     formView: {
       parametar1: { title: "Pomeraj:", readonly: false },
@@ -168,6 +183,7 @@ const BlockItems = [
     id: 16,
     category: "Ograničavači",
     name: "Pozitivni ograničavač",
+    numberOfInputs: 1,
     numberOfParameters: 0,
     formView: {
       parametar1: { title: "Parametar 1:", readonly: true },
@@ -179,6 +195,7 @@ const BlockItems = [
     id: 17,
     category: "Razno",
     name: "Quit",
+    numberOfInputs: 2,
     numberOfParameters: 0,
     formView: {
       parametar1: { title: "Parametar 1:", readonly: true },
@@ -190,6 +207,7 @@ const BlockItems = [
     id: 18,
     category: "Razno",
     name: "Relej",
+    numberOfInputs: 3,
     numberOfParameters: 0,
     formView: {
       parametar1: { title: "Parametar 1:", readonly: true },
@@ -201,6 +219,7 @@ const BlockItems = [
     id: 19,
     category: "Trigonometrija",
     name: "Sin",
+    numberOfInputs: 1,
     numberOfParameters: 3,
     formView: {
       parametar1: { title: "Parametar 1:", readonly: false },
@@ -212,6 +231,7 @@ const BlockItems = [
     id: 20,
     category: "Generatori",
     name: "Generator imuplsa",
+    numberOfInputs: 1,
     numberOfParameters: 1,
     formView: {
       parametar1: { title: "Parametar:", readonly: false },
@@ -223,6 +243,7 @@ const BlockItems = [
     id: 21,
     category: "Razno",
     name: "Jedinično kašnjenje",
+    numberOfInputs: 1,
     numberOfParameters: 0,
     formView: {
       parametar1: { title: "Parametar 1:", readonly: true },
@@ -234,6 +255,7 @@ const BlockItems = [
     id: 22,
     category: "Razno",
     name: "Vacuous",
+    numberOfInputs: 0,
     numberOfParameters: 1,
     formView: {
       parametar1: { title: "Parametar:", readonly: false },
@@ -245,6 +267,7 @@ const BlockItems = [
     id: 23,
     category: "Osnovni matematički",
     name: "Sabirač",
+    numberOfInputs: 3,
     numberOfParameters: 3,
     formView: {
       parametar1: { title: "Parametar 1:", readonly: false },
@@ -256,6 +279,7 @@ const BlockItems = [
     id: 24,
     category: "Osnovni matematički",
     name: "Množač",
+    numberOfInputs: 2,
     numberOfParameters: 0,
     formView: {
       parametar1: { title: "Parametar 1:", readonly: true },
@@ -267,6 +291,7 @@ const BlockItems = [
     id: 25,
     category: "Razno",
     name: "Wye",
+    numberOfInputs: 2,
     numberOfParameters: 2,
     formView: {
       parametar1: { title: "Parametar 1:", readonly: false },
@@ -278,6 +303,7 @@ const BlockItems = [
     id: 26,
     category: "Razno",
     name: "Kolo zadrške",
+    numberOfInputs: 2,
     numberOfParameters: 0,
     formView: {
       parametar1: { title: "Parametar 1:", readonly: true },
@@ -289,6 +315,7 @@ const BlockItems = [
     id: 27,
     category: "Osnovni matematički",
     name: "Delitelj",
+    numberOfInputs: 2,
     numberOfParameters: 0,
     formView: {
       parametar1: { title: "Parametar 1:", readonly: true },
@@ -300,6 +327,7 @@ const BlockItems = [
     id: 28,
     category: "Osnovni matematički",
     name: "Invertor",
+    numberOfInputs: 1,
     numberOfParameters: 0,
     formView: {
       parametar1: { title: "Parametar 1:", readonly: true },
@@ -311,6 +339,7 @@ const BlockItems = [
     id: 29,
     category: "Razno",
     name: "Vreme",
+    numberOfInputs: 0,
     numberOfParameters: 0,
     formView: {
       parametar1: { title: "Parametar 1:", readonly: true },

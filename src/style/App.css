@@ -3,6 +3,8 @@
     --header-height: 70px;
     --setBox-height: 200px;
     --setBox-width: 300px;
+    --errorBox-height: 100px;
+    --errorBox-width: 500px;
 }
 
 #root {
@@ -14,6 +16,14 @@
 /* APP HEADER START */
 .app-header {
     height: var(--header-height);
+}
+
+.center-header-item-wrapper {
+    cursor: pointer;
+}
+
+.clicked {
+    border: 1px solid gray;
 }
 
 /* APP HEADER END */
@@ -65,6 +75,7 @@
 }
 
 .one-dragged-block-section {
+    cursor: pointer;
     text-wrap: nowrap;
 }
 
@@ -88,3 +99,15 @@
 }
 
 /* SET PARAMETERS BOX END*/
+
+/* ERROR BOX STAR */
+.error-box {
+    top: calc(50% - (var(--errorBox-height)/2));
+    left: calc(50% - (var(--errorBox-width)/2));
+    width: var(--errorBox-width);
+    height: var(--errorBox-height);
+    z-index: 99;
+    background-color: white;
+}
+
+/* ERROR BOX END */

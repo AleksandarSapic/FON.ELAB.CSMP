@@ -80,12 +80,9 @@ function DraggedBlockInfo() {
             <div className="d-flex one-output-wrapper">
               <span className="text-center w-50">Izlaz</span>
               {block.output && (
-                <div className="d-flex">
-                  <span className="text-center w-50">Ulaz 3</span>
-                  <span className="text-center w-50">
-                    {block.output?.id + ". " + block.output?.name}
-                  </span>
-                </div>
+                <span className="text-center w-50">
+                  {block.output?.id + ". " + block.output?.name}
+                </span>
               )}
             </div>
           </div>
